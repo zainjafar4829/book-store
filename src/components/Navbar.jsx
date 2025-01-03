@@ -13,7 +13,7 @@ const navigation = [
 ];
 
 const Navbar = () => {
-  const currentUser = true;
+  const currentUser = false;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   // this is for dropdown menu on user icon
   console.log(isDropdownOpen);

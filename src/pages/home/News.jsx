@@ -1,13 +1,15 @@
 import React from "react";
 import news1 from "../../assets/news/news-1.png";
-import news2 from "../../assets/news/news-1.png";
-import news3 from "../../assets/news/news-1.png";
-import news4 from "../../assets/news/news-1.png";
+import news2 from "../../assets/news/news-2.png";
+import news3 from "../../assets/news/news-3.png";
+import news4 from "../../assets/news/news-4.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router";
 // Import Swiper styles
+// Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const news = [
@@ -53,30 +55,28 @@ const News = () => {
       <h2 className="text-3xl font-semibold mb-6">News Section</h2>
       <Swiper
         slidesPerView={1}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
+        spaceBetween={0}
+        navigation={true}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 2,
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 2,
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         {news.map((item, index) => (
           <SwiperSlide key={index}>
-            <div>
+            <div className="flex flex-col sm:flex-row sm:justify-between items-center">
               {/* content */}
               <div className="py-4">
                 <Link to="/news">
@@ -86,6 +86,9 @@ const News = () => {
                 </Link>
                 <div className="w-12 h-[4px] bg-primary mb-5"></div>
                 <p className="text-sm text-gray-600">{item.description}</p>
+              </div>
+              <div className="flex-shrink-0">
+                <img src={item.image} alt="" className="w-full object-cover" />
               </div>
             </div>
           </SwiperSlide>
