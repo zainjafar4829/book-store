@@ -6,6 +6,9 @@ import Swiper from "swiper";
 import "swiper/css";
 const swiper = new Swiper(".swiper-container");
 const BookCard = ({ book }) => {
+  const addToCart = () => {
+    console.log("Added to cart");
+  };
   return (
     <div className="swiper mySwiper">
       <div className="swiper-wrapper">
@@ -38,7 +41,10 @@ const BookCard = ({ book }) => {
                   ${book?.oldPrice}
                 </span>
               </p>
-              <button className="btn-primary px-6 space-x-1 flex items-center gap-1 ">
+              <button
+                onClick={addToCart}
+                className="btn-primary px-6 space-x-1 flex items-center gap-1 "
+              >
                 <FiShoppingCart className="" />
                 <span>Add to Cart</span>
               </button>
