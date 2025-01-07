@@ -4,6 +4,7 @@ import App from "../App";
 import Home from "../pages/home/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import CartPage from "../pages/books/cartPage";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
           <Route path="about" element={<h1>This is about page</h1>} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<h1>This is no content found page</h1>} />
         </Route>
       </Routes>

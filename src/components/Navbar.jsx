@@ -5,6 +5,7 @@ import { HiOutlineUser } from "react-icons/hi";
 import { FaRegHeart } from "react-icons/fa";
 import avatarImg from "../assets/avatar.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 const navigation = [
   { name: "Dashboard", href: "/dashboard" },
   { name: "Orders", href: "/orders" },
@@ -13,6 +14,8 @@ const navigation = [
 ];
 
 const Navbar = () => {
+  const cartItemsCount = useSelector((state) => state.cart.cartItems.length);
+
   const currentUser = false;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   // this is for dropdown menu on user icon
@@ -86,7 +89,13 @@ const Navbar = () => {
             className="bg-primary p-1 sm:px-6 py-2 flex items-center rounded-sm"
           >
             <HiOutlineShoppingCart className="" />
-            <span className="text-sm font-semibold sm:ml-1">0</span>
+            {cartItemsCount > 0 ? (
+              <span className="text-sm font-semibold sm:ml-1">
+                {cartItemsCount}
+              </span>
+            ) : (
+              <span className="text-sm font-semibold sm:ml-1">0</span>
+            )}
           </Link>
           <FaRegHeart />
         </div>
