@@ -1,0 +1,64 @@
+/* 404NotFound.css */
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.not-found-404 {
+  font-size: 8rem;
+  font-weight: bold;
+  animation: bounce 2s infinite;
+  color: rgb(255 206 26 / var(--tw-bg-opacity, 1));
+}
+
+.not-found-message {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  opacity: 0;
+  animation: fadeIn 2s forwards 1s;
+}
+
+.not-found-link {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.not-found-link:hover {
+  color: #0056b3;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
