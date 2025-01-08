@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 // import "./styles.css";
 import BookCard from "../books/BookCard";
 const categories = [
@@ -20,8 +18,6 @@ const categories = [
 const TopSellers = () => {
   const [books, setBooks] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Choose a genre");
-  // console.log(books);
-
   useEffect(() => {
     fetch("books.json")
       .then((res) => res.json())
@@ -33,7 +29,6 @@ const TopSellers = () => {
       : books.filter(
           (book) => book.category === selectedCategory.toLowerCase()
         );
-  console.log(filteredBooks);
   return (
     <div className="py-10">
       <h2 className="text-3xl font-semibold mb-6">Top Sellers</h2>

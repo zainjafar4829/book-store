@@ -5,6 +5,8 @@ import Home from "../pages/home/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import CartPage from "../pages/books/cartPage";
+import CheckoutPage from "../pages/books/CheckoutPage";
+import NotFound from "../pages/home/NotFound";
 
 const Router = () => {
   return (
@@ -20,7 +22,8 @@ const Router = () => {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="cart" element={<CartPage />} />
-          <Route path="*" element={<h1>This is no content found page</h1>} />
+          <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
